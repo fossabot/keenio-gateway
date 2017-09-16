@@ -209,7 +209,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>de.noltarium.loady.config.LoadyConfigServer</mainClass>
+					<mainClass>de.noltarium.keenio.gateway.RunnerApplication</mainClass>
 				</configuration>
 				<executions>
 					<execution>
