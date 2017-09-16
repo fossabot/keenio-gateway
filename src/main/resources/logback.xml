@@ -1,0 +1,5 @@
+<configuration debug="false" scan="true" scanPeriod="1 minute">
+	<include resource="logback.base.include.xml" />
+	
+
+</configuration>

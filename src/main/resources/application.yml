@@ -1,0 +1,6 @@
+spring:
+  application:
+     name: keenio-gateway
+  profiles:
+     active: log
+     
