@@ -1,9 +1,8 @@
 package de.noltarium.keenio.gateway.controller;
 
-import java.util.LinkedHashMap;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,7 +21,7 @@ public class Gateway {
 
 	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = {
 			MediaType.APPLICATION_ATOM_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-	public void receiveTravisCINotification(@RequestBody LinkedHashMap<String, Object> analisticData) {
+	public void receiveTravisCINotification(@RequestBody  MultiValueMap  analisticData) {
 		analyticsStorage.pushData(analisticData);
 	}
 
