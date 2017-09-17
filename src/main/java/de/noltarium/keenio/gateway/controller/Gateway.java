@@ -21,7 +21,7 @@ public class Gateway {
 
 	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = {
 			MediaType.APPLICATION_ATOM_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-	public void receiveTravisCINotification(@RequestBody  MultiValueMap  analisticData) {
+	public void receiveTravisCINotification(MultiValueMap  analisticData) {
 		analyticsStorage.pushData(analisticData);
 	}
 
