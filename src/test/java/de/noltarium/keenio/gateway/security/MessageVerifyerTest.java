@@ -12,8 +12,8 @@ public class MessageVerifyerTest {
 
 	@Test
 	public void test() throws Exception {
-		
-		//generate a key pair for the test
+
+		// generate a key pair for the test
 		KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
 		keyGen.initialize(512);
 		KeyPair genKeyPair = keyGen.genKeyPair();

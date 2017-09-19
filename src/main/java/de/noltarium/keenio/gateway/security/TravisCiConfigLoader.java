@@ -1,15 +1,11 @@
 package de.noltarium.keenio.gateway.security;
 
 import java.security.KeyFactory;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.X509EncodedKeySpec;
-import java.util.Arrays;
 import java.util.Map;
-
-import javax.crypto.Cipher;
 
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +45,6 @@ public class TravisCiConfigLoader implements PublicKeyLoader {
 		return config;
 	}
 
-	
 	private PublicKey convertToPublicKey(String public_key) throws NoSuchAlgorithmException, InvalidKeySpecException {
 
 		// remove comment lines

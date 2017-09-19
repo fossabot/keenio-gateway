@@ -5,7 +5,6 @@ import static org.junit.Assert.assertNotNull;
 import java.io.IOException;
 import java.security.PublicKey;
 import java.util.HashMap;
-import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.Before;
@@ -39,13 +38,10 @@ public class TravisCiConfigLoaderTest {
 		loader = new TravisCiConfigLoader(restTemplate);
 		Resource resource = new ClassPathResource("travis-config.json");
 		String publicKeyAsString = FileUtils.readFileToString(resource.getFile(), "UTF-8");
-		
-		HashMap<String,Object> result =
-		        new ObjectMapper().readValue(publicKeyAsString, HashMap.class);
-		
 
-		Mockito.when(restTemplate.getForObject(Mockito.anyString(), Matchers.any(Class.class)))
-				.thenReturn(result);
+		HashMap<String, Object> result = new ObjectMapper().readValue(publicKeyAsString, HashMap.class);
+
+		Mockito.when(restTemplate.getForObject(Mockito.anyString(), Matchers.any(Class.class))).thenReturn(result);
 
 	}
 

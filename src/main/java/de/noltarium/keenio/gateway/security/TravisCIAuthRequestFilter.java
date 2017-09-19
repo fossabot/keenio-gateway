@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Profile;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -40,7 +39,7 @@ public class TravisCIAuthRequestFilter extends OncePerRequestFilter {
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
 		log.trace("validate incomming request");
-		
+
 		String signature = request.getHeader("Signature");
 		String payload = request.getParameter("payload");
 		if (StringUtils.isNotBlank(payload) && StringUtils.isNotBlank(signature)) {
@@ -51,7 +50,7 @@ public class TravisCIAuthRequestFilter extends OncePerRequestFilter {
 				authorities.add(new SimpleGrantedAuthority("ROLE_TRAVISCI"));
 				Authentication auth = new UsernamePasswordAuthenticationToken("travisci", "none", authorities);
 				SecurityContextHolder.getContext().setAuthentication(auth);
-			}else{
+			} else {
 				log.debug("MessageVerifyer faild");
 			}
 		}

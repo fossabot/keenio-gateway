@@ -1,0 +1,168 @@
+{
+  "id": 276913609,
+  "number": "2648",
+  "config": {
+    "sudo": false,
+    "dist": "trusty",
+    "language": "python",
+    "python": [
+      "3.5.2"
+    ],
+    "branches": {
+      "only": [
+        "master"
+      ]
+    },
+    "cache": {
+      "pip": true,
+      "directories": [
+        "vendor/bundle",
+        "node_modules"
+      ]
+    },
+    "deploy": {
+      "provider": "heroku",
+      "api_key": {
+        "secure": "hylw2GIHMvZKOKX3uPSaLEzVrUGEA9mzGEA0s4zK37W9HJCTnvAcmgRCwOkRuC4L7R4Zshdh/CGORNnBBgh1xx5JGYwkdnqtjHuUQmWEXCusrIURu/iEBNSsZZEPK7zBuwqMHj2yRm64JfbTDJsku3xdoA5Z8XJG5AMJGKLFgUQ="
+      },
+      "app": "docs-travis-ci-com",
+      "skip_cleanup": true,
+      "true": {
+        "branch": [
+          "master"
+        ]
+      }
+    },
+    "notifications": {
+      "slack": {
+        "rooms": {
+          "secure": "LPNgf0Ra6Vu6I7XuK7tcnyFWJg+becx1RfAR35feWK81sru8TyuldQIt7uAKMA8tqFTP8j1Af7iz7UDokbCCfDNCX1GxdAWgXs+UKpwhO89nsidHAsCkW2lWSEM0E3xtOJDyNFoauiHxBKGKUsApJTnf39H+EW9tWrqN5W2sZg8="
+        },
+        "on_success": "never"
+      },
+      "webhooks": "https://docs.travis-ci.com/update_webhook_payload_doc"
+    },
+    "install": [
+      "rvm use 2.3.1 --install",
+      "bundle install --deployment"
+    ],
+    "script": [
+      "bundle exec rake test"
+    ],
+    "result": "configured",
+    "global_env": [
+      "PATH=$HOME/.local/user/bin:$PATH"
+    ],
+    "group": "stable"
+  },
+  "type": "cron",
+  "state": "passed",
+  "status": 0,
+  "result": 0,
+  "status_message": "Passed",
+  "result_message": "Passed",
+  "started_at": "2017-09-18T15:52:23Z",
+  "finished_at": "2017-09-18T15:55:42Z",
+  "duration": 199,
+  "build_url": "https://travis-ci.org/travis-ci/docs-travis-ci-com/builds/276913609",
+  "commit_id": 80722915,
+  "commit": "e3260a4d0d34b33a05f4d1953e064b2d20b1b0de",
+  "base_commit": "e3260a4d0d34b33a05f4d1953e064b2d20b1b0de",
+  "head_commit": null,
+  "branch": "master",
+  "message": "Merge pull request #1449 from travis-ci/gm_typofix\n\nFixed small grammatical error in the running builds in debug mode guide.",
+  "compare_url": "https://github.com/travis-ci/docs-travis-ci-com/compare/0177e9d1e51316c7b65360b1faa400858a41b2ca...e3260a4d0d34b33a05f4d1953e064b2d20b1b0de",
+  "committed_at": "2017-09-18T13:24:17Z",
+  "author_name": "María de Antón",
+  "author_email": "mariadeanton@gmail.com",
+  "committer_name": "GitHub",
+  "committer_email": "noreply@github.com",
+  "pull_request": false,
+  "pull_request_number": null,
+  "pull_request_title": null,
+  "tag": null,
+  "repository": {
+    "id": 1771959,
+    "name": "docs-travis-ci-com",
+    "owner_name": "travis-ci",
+    "url": "http://docs.travis-ci.com"
+  },
+  "matrix": [
+    {
+      "id": 276913610,
+      "repository_id": 1771959,
+      "parent_id": 276913609,
+      "number": "2648.1",
+      "state": "passed",
+      "config": {
+        "sudo": false,
+        "dist": "trusty",
+        "language": "python",
+        "python": "3.5.2",
+        "branches": {
+          "only": [
+            "master"
+          ]
+        },
+        "cache": {
+          "pip": true,
+          "directories": [
+            "vendor/bundle",
+            "node_modules"
+          ]
+        },
+        "notifications": {
+          "slack": {
+            "rooms": {
+              "secure": "LPNgf0Ra6Vu6I7XuK7tcnyFWJg+becx1RfAR35feWK81sru8TyuldQIt7uAKMA8tqFTP8j1Af7iz7UDokbCCfDNCX1GxdAWgXs+UKpwhO89nsidHAsCkW2lWSEM0E3xtOJDyNFoauiHxBKGKUsApJTnf39H+EW9tWrqN5W2sZg8="
+            },
+            "on_success": "never"
+          },
+          "webhooks": "https://docs.travis-ci.com/update_webhook_payload_doc"
+        },
+        "install": [
+          "rvm use 2.3.1 --install",
+          "bundle install --deployment"
+        ],
+        "script": [
+          "bundle exec rake test"
+        ],
+        "result": "configured",
+        "global_env": [
+          "PATH=$HOME/.local/user/bin:$PATH"
+        ],
+        "group": "stable",
+        "os": "linux",
+        "addons": {
+          "deploy": {
+            "provider": "heroku",
+            "api_key": {
+              "secure": "hylw2GIHMvZKOKX3uPSaLEzVrUGEA9mzGEA0s4zK37W9HJCTnvAcmgRCwOkRuC4L7R4Zshdh/CGORNnBBgh1xx5JGYwkdnqtjHuUQmWEXCusrIURu/iEBNSsZZEPK7zBuwqMHj2yRm64JfbTDJsku3xdoA5Z8XJG5AMJGKLFgUQ="
+            },
+            "app": "docs-travis-ci-com",
+            "skip_cleanup": true,
+            "true": {
+              "branch": [
+                "master"
+              ]
+            }
+          }
+        }
+      },
+      "status": 0,
+      "result": 0,
+      "commit": "e3260a4d0d34b33a05f4d1953e064b2d20b1b0de",
+      "branch": "master",
+      "message": "Merge pull request #1449 from travis-ci/gm_typofix\n\nFixed small grammatical error in the running builds in debug mode guide.",
+      "compare_url": "https://github.com/travis-ci/docs-travis-ci-com/compare/0177e9d1e51316c7b65360b1faa400858a41b2ca...e3260a4d0d34b33a05f4d1953e064b2d20b1b0de",
+      "started_at": null,
+      "finished_at": null,
+      "committed_at": "2017-09-18T13:24:17Z",
+      "author_name": "María de Antón",
+      "author_email": "mariadeanton@gmail.com",
+      "committer_name": "GitHub",
+      "committer_email": "noreply@github.com",
+      "allow_failure": false
+    }
+  ]
+}
