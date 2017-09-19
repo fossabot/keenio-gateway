@@ -18,18 +18,17 @@ import lombok.extern.slf4j.Slf4j;
 @Profile("keenio")
 public class KeenIOConnectionServiceImpl implements AnalyticsStorage {
 
-	@Value("keenio.project")
+	@Value("${keenio.project}")
 	String projectId;
 
-	@Value("keenio.readkey")
+	@Value("${keenio.readkey}")
 	String readkey;
 
-	@Value("keenio.writekey")
+	@Value("${keenio.writekey}")
 	String writekey;
-	
-	@Value("keenio.defaultEventCollection")
+
+	@Value("${keenio.defaultEventCollection:travisci}")
 	String defaultEventCollection;
-	
 
 	@PostConstruct
 	public void setupKeenIOClient() {
@@ -38,13 +37,14 @@ public class KeenIOConnectionServiceImpl implements AnalyticsStorage {
 		KeenProject project = new KeenProject(projectId, writekey, readkey);
 		client.setDefaultProject(project);
 		KeenClient.initialize(client);
+		KeenClient.client().setDebugMode(true);
 	}
 
 	@Override
 	public void pushData(Map<String, Object> content) {
 		pushData(defaultEventCollection, content);
 	}
-	
+
 	public void pushData(String eventCollection, Map<String, Object> content) {
 		KeenClient.client().addEvent(eventCollection, content);
 	}
