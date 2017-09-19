@@ -2,4 +2,16 @@ language: java
 dist: trusty
 jdk:
 - openjdk8
+cache:
+  directories:
+  - "$HOME/.m2"
+deploy:
+  provider: heroku
+  app: "keenio-gateway"
+  on:
+    all_branches: true
+  api_key:
+    secure: "PVVWl+V3V5g/5Pq512ZqTrLT+1MErXGIRQ7G0s8GKdRDzXRPwDfc97DZ+6BGfQ/I0giNACESqnZz/OXI0wzcah2FelPflBzstzHhxRK7NHjASTJJpS/hlOuWTnJiWLDI4ihhSvMlITfbYtrGkMlG4s5SG1CDELQbnO6vIsj+q2kqZnuz2mguGm0cPYAirPYnbnUJf+xN9hPT1dyAW+lOI9/o4tHknxDfO8lLJh9ubzc6yiAn52YdP8eyh8H37uEFVmt+Pugjb2yKx2enb4RAwfIUtJp0JRFXyaQ+Eaz93EDNF0FjxM1Kr6BH9E3hAeEK2DPUlwbEel5KvbZLweF5x+w2nsvQ8cyQlnubruD9Mo+PpEgGH1dLW5bY+NehG+l6+YnEa2LTSBScxCUsJaSR+8CVv1JN9japKA6sYNhOHfalHvAUEDzPOQxTCRiLjcuKXpqV//b9rqDnKw/57Z6w5XiIPL4c1z6EXC7bI4DXoCWueQJigRl3HLckEgeqyaiiyh31gm1dowWwCuPqvADMMQo5Ue3nNyJ/8IciKkRk1J2WJ0ZEVotx3CdTWrpUiXD2J1vnWZKTwjckrA68IdwmwUZWgXBRAoUPymfyeyzFSLmz5bHxfPqQsFkbfBZ2aka2A+uA8DWrKZMgTevFDJtJtnTdRX9oQdP+iy6Yv4h7mzE="
 
+notifications:
+  webhooks: https://keenio-gateway.herokuapp.com/build
